@@ -98,7 +98,7 @@ footer.site-footer {
             aria-label="Toggle navigation"></button>
 
         <div class="container">
-            <a class="navbar-brand text-white fw-bold" href="../home.php" style="letter-spacing:1px;">
+            <a class="navbar-brand text-white fw-bold" href="https://www.youtube.com/shorts/wGzFU25m51I" style="letter-spacing:1px;">
                 🎃 Halloween
             </a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
