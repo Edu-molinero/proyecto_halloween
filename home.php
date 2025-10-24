@@ -84,13 +84,6 @@ footer.site-footer {
 </style>
 
 <body>
-    <?php
-        if (isset($_SESSION['usuario'])) {
-            echo htmlspecialchars($_SESSION['usuario']);
-        } else {
-            echo "";
-        }
-    ?>
     <!-- Barra de navegación -->
     <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
         <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
@@ -118,37 +111,12 @@ footer.site-footer {
         </div>
 
     </nav>
-    <!--
-    <nav class="navbar navbar-expand-sm bg-warning color-white">
-        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
-            aria-label="Toggle navigation"></button>
-        <div class="collapse navbar-collapse" id="collapsibleNavId" style="background-color: rgba(180, 78, 10, 0.75);">
-            <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#" aria-current="page">Incio<span
-                            class="visually-hidden">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="sistema/noticias.html">Noticias</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="sistema/tienda.html">Tienda</a>
-                </li>
-            </ul>
-            <form class="d-flex my-2 my-lg-0">
-                <input class="form-control me-sm-2" type="text" placeholder="Buscar"/>
-                <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Buscar</button>
-            </form>
-        </div>
-    </nav>
-    -->
 
     <!-- Hero -->
     <main class="container">
         <section class="hero">
             <h1>Bienvenidos a Halloween - 31 Octubre</h1>
-            <p class="lead">Aquí encontrarás la mejor página de noticias y de tienda de Halloween de 2025.</p>
+            <p class="lead">Aquí encontrarás la mejor página de noticias y la mejor tienda de Halloween de 2025.</p>
         </section>
 
         <!-- Contacto -->
@@ -205,6 +173,7 @@ footer.site-footer {
         session_destroy();
 
         // Location: index.php?expirado=1
+        // Esto de arriba va justo en las comillas del - header("Location: index.php?expirado=1");
         // Redirigir al login
         header("");
         exit;
@@ -223,9 +192,11 @@ footer.site-footer {
                 <a class="social-btn" href="#" aria-label="TikTok">🎵</a>
                 <br>
                 <br>
+                <small>© 2025 Halloween. Todos los derechos reservados.</small>
+                <br>
+                <br>
                 <a href="logout.php">Cerrar sesión y borrar las cookies</a>
 
-                <small>© 2025 Halloween. Todos los derechos reservados.</small>
             </div>
             </div>
         </footer>
