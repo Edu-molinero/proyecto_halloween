@@ -60,6 +60,27 @@ footer.site-footer {
     padding: 2rem 0;
     margin-top: 2rem;
 }
+
+.social-btn {
+    margin: 0 .4rem;
+    color: #ffeeda;
+    text-decoration: none;
+    background: transparent;
+    border: 1px solid rgba(255, 238, 217, 0.06);
+    padding: .45rem .6rem;
+    border-radius: 8px;
+}
+
+.social-btn:hover {
+    background: rgba(180, 78, 10, 0.14);
+    transform: translateY(-2px);
+}
+
+@media (min-width: 992px) {
+    .news-image {
+        min-height: 220px;
+    }
+}
 </style>
 
 <body>
@@ -194,17 +215,18 @@ footer.site-footer {
             <div class="container text-center">
                 <div class="mb-3">
                 </div>
-                    <h5>Síguenos en nuestras redes sociales</h5>
-                    <br>
-                    <a class="social-btn" href="#" aria-label="Instagram">📸</a>
-                    <a class="social-btn" href="#" aria-label="Twitter">🐦</a>
-                    <a class="social-btn" href="#" aria-label="Facebook">📘</a>
-                    <a class="social-btn" href="#" aria-label="TikTok">🎵</a>
-                    <br>
-                    <a href="logout.php">Cerrar sesión y borrar las cookies</a>
-                
+                <h5>Síguenos en nuestras redes sociales</h5>
+                <br>
+                <a class="social-btn" href="#" aria-label="Instagram">📸</a>
+                <a class="social-btn" href="#" aria-label="Twitter">🐦</a>
+                <a class="social-btn" href="#" aria-label="Facebook">📘</a>
+                <a class="social-btn" href="#" aria-label="TikTok">🎵</a>
+                <br>
+                <br>
+                <a href="logout.php">Cerrar sesión y borrar las cookies</a>
+
                 <small>© 2025 Halloween. Todos los derechos reservados.</small>
-                </div>
+            </div>
             </div>
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
