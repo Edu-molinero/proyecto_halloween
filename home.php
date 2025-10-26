@@ -122,7 +122,7 @@ footer.site-footer {
         <!-- Contacto -->
         <section id="contacto" class="bg-light py-5">
             <div class="container text-bg-dark p-4 my-4 rounded">
-                <h2 class="text-center mb-4 text-bg-dark">Quienes Somos</h2>
+                <h2 class="text-center mb-4 text-bg-dark">Ayuda</h2>
                 <p class="text-center">Si tienes alguna duda crea un ticket</p>
 
                 <!-- Formulario -->
