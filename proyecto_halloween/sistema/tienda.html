@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+  :root {
+    --halloween-orange: #B44E0A;
+    --halloween-dark: #1b1b1b;
+    --halloween-deep: #3a0f2f;
+    --muted: #f4efe6;
+  }
+
+  body {
+    background: linear-gradient(180deg, #0b0b0b 0%, #1b1b1b 60%);
+    color: var(--muted);
+    padding-top: 72px;
+    /* espacio para navbar fijo */
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+
+  .navbar-custom {
+    background: linear-gradient(90deg, rgba(180, 78, 10, 0.95), rgba(58, 15, 47, 0.9));
+    border-bottom: 3px solid rgba(0, 0, 0, 0.4);
+  }
+
+  .navbar-custom .nav-link {
+    color: #ffeeda;
+  }
+
+  .navbar-custom .nav-link.active {
+    color: white;
+    font-weight: 600;
+  }
+
+  .hero {
+    background: linear-gradient(180deg, rgba(180, 78, 10, 0.15), rgba(58, 15, 47, 0.12));
+    border: 2px solid rgba(180, 78, 10, 0.12);
+    padding: 2.5rem 1rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+    color: var(--muted);
+    border-radius: 8px;
+  }
+
+  .hero h1 {
+    color: #fff7ec;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  }
+
+  .category-row {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .cat-btn {
+    background: rgba(255, 238, 217, 0.06);
+    border: 1px solid rgba(180, 78, 10, 0.12);
+    color: #ffeeda;
+    padding: 0.45rem 0.9rem;
+    border-radius: 18px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .cat-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(180, 78, 10, 0.08);
+  }
+
+  /* Cards */
+  .news-card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.18));
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+
+  .news-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+  }
+
+  .news-image {
+    background: #2a2a2a;
+    min-height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.12);
+    font-size: 1.15rem;
+  }
+
+  .news-body {
+    padding: 1rem;
+    color: #fff9f0;
+  }
+
+  .news-title {
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: .5rem;
+  }
+
+  .news-excerpt {
+    color: #ffeeda;
+    opacity: 0.9;
+    font-size: .95rem;
+  }
+
+  footer.site-footer {
+    background: linear-gradient(180deg, rgba(58, 15, 47, 0.9), rgba(18, 8, 10, 0.95));
+    color: #ffeeda;
+    padding: 2rem 0;
+    margin-top: 2rem;
+  }
+
+  .social-btn {
+    margin: 0 .4rem;
+    color: #ffeeda;
+    text-decoration: none;
+    background: transparent;
+    border: 1px solid rgba(255, 238, 217, 0.06);
+    padding: .45rem .6rem;
+    border-radius: 8px;
+  }
+
+  .social-btn:hover {
+    background: rgba(180, 78, 10, 0.14);
+    transform: translateY(-2px);
+  }
+
+  @media (min-width: 992px) {
+    .news-image {
+      min-height: 220px;
+    }
+  }
+</style>
+
+<body>
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
+
+    <div class="container">
+      <a class="navbar-brand text-white fw-bold" href="../home.php" style="letter-spacing:1px;">
+        🎃 Halloween
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+        <span class="navbar-toggler-icon" style="filter:invert(1) hue-rotate(200deg)"></span>
+      </button>
+      <form class="d-flex my-2 my-lg-0">
+        <input class="form-control me-sm-2" type="text" placeholder="Buscar" />
+        <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Enter</button>
+      </form>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="../home.php">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="../sistema/noticias.html">Noticias</a></li>
+          <li class="nav-item"><a class="nav-link" href="../sistema/tienda.html">Tienda</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Tienda Halloween - 31 Octubre</h1>
+      <p class="lead">La mejor tienda de Halloween de 2025.</p>
+    </section>
+
+    <!-- Noticias: tres columnas -->
+    <section class="row g-4">
+      <div class="col-12 col-md-6 col-lg-4">
+        <article class="news-card">
+          <div class="news-image">
+            <!-- Noticia del mejor disfraz -->
+            <img src="../imagen/frankestein.jpg" alt="Noticia 1" class="img-fluid"
+              style="display:block; width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="news-body">
+            <h3 class="news-title">Frankestein</h3>
+            <p class="news-excerpt"></p>
+            <a href="https://bit.ly/Disfraz_Viernes_13" class="btn btn-sm"
+              style="background:var(--halloween-orange); color:#fff; border-radius:8px;">Compra</a>
+            <a href="https://bit.ly/Disfraz_Viernes_13" class="btn btn-sm"
+              style="background:var(--halloween-orange); color:#fff; border-radius:8px;">Cesta</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Noticias: tres columnas -->
+      <section class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="news-card">
+            <div class="news-image">
+              <!-- Noticia del mejor disfraz -->
+              <img src="../imagen/esqueleto.jpg" alt="Noticia 1" class="img-fluid"
+                style="display:block; width:100%; height:100%; object-fit:cover;">
+            </div>
+            <div class="news-body">
+              <h3 class="news-title">Esqueleto</h3>
+              <p class="news-excerpt"></p>
+              <a href="https://bit.ly/Disfraz_Viernes_13" class="btn btn-sm"
+                style="background:var(--halloween-orange); color:#fff; border-radius:8px;">Compra</a>
+              <a href="https://bit.ly/Disfraz_Viernes_13" class="btn btn-sm"
+                style="background:var(--halloween-orange); color:#fff; border-radius:8px;">Cesta</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Noticias: tres columnas -->
+        <section class="row g-4">
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="news-card">
+              <div class="news-image">
+                <!-- Noticia del mejor disfraz -->
+                <img src="../imagen/payaso.jpg" alt="Noticia 1" class="img-fluid"
+                  style="display:block; width:100%; height:100%; object-fit:cover;">
+              </div>
+              <div class="news-body">
+                <h3 class="news-title">Payaso</h3>
+                <p class="news-excerpt"></p>
+                <a href="https://bit.ly/Disfraz_Viernes_13" class="btn btn-sm"
+                  style="background:var(--halloween-orange); color:#fff; border-radius:8px;">Compra</a>
+                <a href="https://bit.ly/Disfraz_Viernes_13" class="btn btn-sm"
+                  style="background:var(--halloween-orange); color:#fff; border-radius:8px;">Cesta</a>
+              </div>
+            </article>
+          </div>
+
+
+          <!-- Footer junto a sus redes  -->
+          <footer class="site-footer">
+            <div class="container text-center">
+              <div class="mb-3">
+                <h5>Síguenos en nuestras redes sociales</h5>
+                <br>
+                <a class="social-btn" href="#" aria-label="Instagram">📸</a>
+                <a class="social-btn" href="#" aria-label="Twitter">🐦</a>
+                <a class="social-btn" href="#" aria-label="Facebook">📘</a>
+                <a class="social-btn" href="#" aria-label="TikTok">🎵</a>
+              </div>
+              <small>© 2025 Halloween. Todos los derechos reservados.</small>
+            </div>
+          </footer>
+
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
