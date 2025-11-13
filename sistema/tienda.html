@@ -83,6 +83,11 @@
     border-radius: 12px;
     overflow: hidden;
     transition: transform .18s ease, box-shadow .18s ease;
+    aspect-ratio: 1;
+    /* Hace que las tarjetas sean cuadradas e iguales */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   .news-card:hover {
@@ -92,7 +97,8 @@
 
   .news-image {
     background: #2a2a2a;
-    min-height: 160px;
+    height: 70%;
+    /* Proporción para la imagen */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -100,9 +106,21 @@
     font-size: 1.15rem;
   }
 
+  .news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    /* Estira la imagen para llenar el contenedor */
+  }
+
   .news-body {
     padding: 1rem;
     color: #fff9f0;
+    height: 30%;
+    /* Proporción para el texto y botones */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .news-title {
@@ -115,6 +133,16 @@
     color: #ffeeda;
     opacity: 0.9;
     font-size: .95rem;
+  }
+
+  .button-group {
+    display: flex;
+    gap: 0.5rem;
+    /* Espacio entre botones */
+    justify-content: center;
+    /* Centra los botones */
+    margin-bottom: 1rem;
+    /* Espacio por debajo de los botones dentro de la caja */
   }
 
   footer.site-footer {
@@ -141,7 +169,12 @@
 
   @media (min-width: 992px) {
     .news-image {
-      min-height: 220px;
+      height: 75%;
+      /* Ajuste en desktop */
+    }
+
+    .news-body {
+      height: 25%;
     }
   }
 </style>
@@ -168,6 +201,7 @@
           <li class="nav-item"><a class="nav-link active" href="../home.php">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="../sistema/noticias.html">Noticias</a></li>
           <li class="nav-item"><a class="nav-link" href="../sistema/tienda.html">Tienda</a></li>
+          <li class="nav-item"><a class="nav-link" href="../sistema/cesta.html">Cesta</a></li>
         </ul>
       </div>
     </div>
@@ -179,83 +213,107 @@
       <p class="lead">La mejor tienda de Halloween de 2025.</p>
     </section>
 
-    <!-- Noticias: tres columnas -->
+    <!-- Productos: tres columnas en fila -->
     <section class="row g-4">
-      <div class="col-12 col-md-6 col-lg-4">
+      <div class="col-4">
         <article class="news-card">
           <div class="news-image">
-            <!-- Noticia del mejor disfraz -->
-            <img src="../imagen/frankestein.jpg" alt="Noticia 1" class="img-fluid"
-              style="display:block; width:100%; height:100%; object-fit:cover;">
+            <img src="../imagen/frankestein.jpg" alt="Frankenstein" class="img-fluid">
           </div>
           <div class="news-body">
-            <h3 class="news-title">Frankestein</h3>
+            <h3 class="news-title">Frankenstein</h3>
             <p class="news-excerpt"></p>
-            <a href="https://bit.ly/Disfraz_Viernes_13" class="btn btn-sm"
-              style="background:var(--halloween-orange); color:#fff; border-radius:8px;">Compra</a>
-            <a href="https://bit.ly/Disfraz_Viernes_13" class="btn btn-sm"
-              style="background:var(--halloween-orange); color:#fff; border-radius:8px;">Cesta</a>
+            <div class="button-group">
+              <a href="https://www.paypal.com" class="btn btn-sm"
+                style="background:var(--halloween-orange); color:#fff; border-radius:8px;">Comprar por 29,99€</a>
+              <button class="btn btn-sm add-to-cart" data-name="Frankenstein" data-price="29.99"
+                data-image="../imagen/frankestein.jpg"
+                style="background:var(--halloween-orange); color:#fff; border-radius:8px;">Añadir a la cesta</button>
+            </div>
           </div>
         </article>
       </div>
 
-      <!-- Noticias: tres columnas -->
-      <section class="row g-4">
-        <div class="col-12 col-md-6 col-lg-4">
-          <article class="news-card">
-            <div class="news-image">
-              <!-- Noticia del mejor disfraz -->
-              <img src="../imagen/esqueleto.jpg" alt="Noticia 1" class="img-fluid"
-                style="display:block; width:100%; height:100%; object-fit:cover;">
-            </div>
-            <div class="news-body">
-              <h3 class="news-title">Esqueleto</h3>
-              <p class="news-excerpt"></p>
-              <a href="https://bit.ly/Disfraz_Viernes_13" class="btn btn-sm"
-                style="background:var(--halloween-orange); color:#fff; border-radius:8px;">Compra</a>
-              <a href="https://bit.ly/Disfraz_Viernes_13" class="btn btn-sm"
-                style="background:var(--halloween-orange); color:#fff; border-radius:8px;">Cesta</a>
-            </div>
-          </article>
-        </div>
-
-        <!-- Noticias: tres columnas -->
-        <section class="row g-4">
-          <div class="col-12 col-md-6 col-lg-4">
-            <article class="news-card">
-              <div class="news-image">
-                <!-- Noticia del mejor disfraz -->
-                <img src="../imagen/payaso.jpg" alt="Noticia 1" class="img-fluid"
-                  style="display:block; width:100%; height:100%; object-fit:cover;">
-              </div>
-              <div class="news-body">
-                <h3 class="news-title">Payaso</h3>
-                <p class="news-excerpt"></p>
-                <a href="https://bit.ly/Disfraz_Viernes_13" class="btn btn-sm"
-                  style="background:var(--halloween-orange); color:#fff; border-radius:8px;">Compra</a>
-                <a href="https://bit.ly/Disfraz_Viernes_13" class="btn btn-sm"
-                  style="background:var(--halloween-orange); color:#fff; border-radius:8px;">Cesta</a>
-              </div>
-            </article>
+      <div class="col-4">
+        <article class="news-card">
+          <div class="news-image">
+            <img src="../imagen/esqueleto.jpg" alt="Esqueleto" class="img-fluid">
           </div>
-
-
-          <!-- Footer junto a sus redes  -->
-          <footer class="site-footer">
-            <div class="container text-center">
-              <div class="mb-3">
-                <h5>Síguenos en nuestras redes sociales</h5>
-                <br>
-                <a class="social-btn" href="#" aria-label="Instagram">📸</a>
-                <a class="social-btn" href="#" aria-label="Twitter">🐦</a>
-                <a class="social-btn" href="#" aria-label="Facebook">📘</a>
-                <a class="social-btn" href="#" aria-label="TikTok">🎵</a>
-              </div>
-              <small>© 2025 Halloween. Todos los derechos reservados.</small>
+          <div class="news-body">
+            <h3 class="news-title">Esqueleto</h3>
+            <p class="news-excerpt"></p>
+            <div class="button-group">
+              <a href="https://www.paypal.com" class="btn btn-sm"
+                style="background:var(--halloween-orange); color:#fff; border-radius:8px;">Comprar por 14,99€</a>
+              <button class="btn btn-sm add-to-cart" data-name="Esqueleto" data-price="14.99"
+                data-image="../imagen/esqueleto.jpg"
+                style="background:var(--halloween-orange); color:#fff; border-radius:8px;">Añadir a la cesta</button>
             </div>
-          </footer>
+          </div>
+        </article>
+      </div>
 
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      <div class="col-4">
+        <article class="news-card">
+          <div class="news-image">
+            <img src="../imagen/payaso.jpg" alt="Payaso" class="img-fluid">
+          </div>
+          <div class="news-body">
+            <h3 class="news-title">Payaso</h3>
+            <p class="news-excerpt"></p>
+            <div class="button-group">
+              <a href="https://www.paypal.com" class="btn btn-sm"
+                style="background:var(--halloween-orange); color:#fff; border-radius:8px;">Comprar por 19,99€</a>
+              <button class="btn btn-sm add-to-cart" data-name="Payaso" data-price="19.99"
+                data-image="../imagen/payaso.jpg"
+                style="background:var(--halloween-orange); color:#fff; border-radius:8px;">Añadir a la cesta</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Footer junto a sus redes -->
+    <footer class="site-footer">
+      <div class="container text-center">
+        <div class="mb-3">
+          <h5>Síguenos en nuestras redes sociales</h5>
+          <br>
+          <a class="social-btn" href="#" aria-label="Instagram">📸</a>
+          <a class="social-btn" href="#" aria-label="Twitter">🐦</a>
+          <a class="social-btn" href="#" aria-label="Facebook">📘</a>
+          <a class="social-btn" href="#" aria-label="TikTok">🎵</a>
+        </div>
+        <small>© 2025 Halloween. Todos los derechos reservados.</small>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Función para agregar productos a la cesta
+      document.addEventListener('DOMContentLoaded', function () {
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        addToCartButtons.forEach(button => {
+          button.addEventListener('click', function () {
+            const name = this.getAttribute('data-name');
+            const price = this.getAttribute('data-price');
+            const image = this.getAttribute('data-image');
+
+            // Obtener la cesta actual de localStorage
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Agregar el producto
+            cart.push({ name, price, image });
+
+            // Guardar en localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Redirigir a cesta.html
+            window.location.href = 'cesta.html';
+          });
+        });
+      });
+    </script>
 </body>
 
 </html>

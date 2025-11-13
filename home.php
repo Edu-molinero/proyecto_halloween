@@ -106,6 +106,7 @@ footer.site-footer {
                     <li class="nav-item"><a class="nav-link active" href="../home.php">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="./sistema/noticias.html">Noticias</a></li>
                     <li class="nav-item"><a class="nav-link" href="./sistema/tienda.html">Tienda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./sistema/cesta.html">Cesta</a></li>
                 </ul>
             </div>
         </div>
@@ -172,10 +173,8 @@ footer.site-footer {
         session_unset();
         session_destroy();
 
-        // Location: index.php?expirado=1
-        // Esto de arriba va justo en las comillas del - header("Location: index.php?expirado=1");
         // Redirigir al login
-        header("");
+        header("Location: index.php?expirado=1");
         exit;
     }
     ?>
